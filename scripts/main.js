@@ -31,7 +31,7 @@ let client, localStream, camera, microphone;
 function join() {
 	renderVideo()
 	const channel_key = null;
-	const channelVal = 1000;
+	const channelVal = '1000';
   console.log("Init AgoraRTC client with App ID: " + appId);
 
   client = AgoraRTC.createClient({
@@ -39,7 +39,7 @@ function join() {
   });
   client.init(appId, function () {
     console.log("AgoraRTC client initialized");
-    client.join(channel_key, channelVal, null, function (uid) {
+    client.join(channel_key, 'hello', null, function (uid) {
       console.log("User " + uid + " join channel successfully");
 
         camera = videoSource.value;
