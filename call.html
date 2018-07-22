@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>In Call</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="./css/main.css">
+	<script src=js/call.js></script>
+</head>
+
+<body>
+	<div class="top-bar">
+		<ul class="bar_items">
+			<li>Logo</li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	
+    <div id="div_device" class="panel panel-default" style="display:none">
+        <div class="select">
+            <label for="audioSource">Audio source: </label>
+            <select id="audioSource"></select>
+        </div>
+        <div class="select">
+            <label for="videoSource">Video source: </label>
+            <select id="videoSource"></select>
+        </div>
+    </div>
+
+
+    <div id="wrapper">
+        <div class="room-name-title" id="room-name-meeting"></div>
+        <div class="main-container vid-container">
+            <div id="video-container-parent">
+                <div id="video-container" class="video-container">
+                    <div id="video-container-multiple"></div>
+                    <div class="toolbar">
+                        <ul>
+                            <li>
+                                <a class="switch-audio-button" href="#">
+                                    <img src="img/Icons/Video.png" alt="Video">
+                                </a>
+                            </li>
+                            <li>
+                                <a class="mute-button" href="#">
+                                    <img src="img/Icons/Audio.png" alt="Mute">
+                                </a>
+                            </li>
+                            <li style="display: none">
+                                <a class="fullscreen-button" style="display: none" href="#">
+                                    <img style="display: none" src="images/btn_maximize@2x.png" alt="Fullscreen">
+                                </a>
+                            </li>
+                            <li style="display: none">
+                                <a class="expension-button" style="display: none" href="#">
+                                    <img style="display: none" src="images/btn_expansion.png" alt="Switch">
+                                </a>
+                            </li>
+                            <li>
+                                <a class="end-call-button" href="#">
+                                    <img src="img/Icons/End%20Call.png" alt="End">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="video-side-bar">
+                <div class="video-operation-bar">
+                    <span class="video-operation-btn list-switch-audio-btn"></span>
+                    <span class="video-operation-btn list-hang-up-btn"></span>
+                    <span class="video-operation-btn list-close-btn"></span>
+                </div>
+            </div>
+            <div class="info"></div>
+        </div>
+        <!--
+            <div class="room-info" style="z-index: 2;">
+                <a href="#" class="btn btn-info" data-toggle="modal" data-target="#roomInfoModal"><span class="fa fa-info"></span></button>
+            </div>
+             -->
+    </div>
+
+
+    <script src="build/AgoraRTCSDK-2.3.1.js"></script>
+    <script>
+        if ('addEventListener' in window) {
+            window.addEventListener('load', function () {
+                document.body.className = document.body.className.replace(/\bis-loading\b/, '');
+            });
+            document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+        }
+    </script>
+	<script src=js/call.js></script>
+</body>
+
+</html>
